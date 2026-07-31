@@ -1,31 +1,34 @@
+/* ═══════════════════════════════════════════════════
+   CHARM THEMES — 확장 설정 > 🎨 UI 테마 (body.charm-theme-* 로 전환)
+   모든 CHARM UI 색은 아래 변수만 참조. 테마 추가 = 블록 하나 추가.
+   ═══════════════════════════════════════════════════ */
 
-
-
+/* 🌙 느와르 (기본) — 다크 + 핑크 */
 .charm-modal, #charm-badge-popup, #charm-send-badge, .mw-modal, .v2-modal {
-    --ch-bg: #1a1a20;            
-    --ch-bg-2: #22222a;          
-    --ch-ink: #ffffff;           
+    --ch-bg: #1a1a20;            /* 컨테이너 배경 */
+    --ch-bg-2: #22222a;          /* 한 단계 뜬 서피스 (픽커/카드) */
+    --ch-ink: #ffffff;           /* 보더·호버 오버레이 믹스 원색 */
     --ch-text: #e8e8ed;
     --ch-text-2: #c4c4c8;
     --ch-text-3: #aaaab0;
     --ch-text-4: #85858d;
     --ch-text-5: #5c5c66;
-    --ch-accent: #E8587A;        
+    --ch-accent: #E8587A;        /* 핑크 — 저장/주요 액션 */
     --ch-accent-hi: #f06a8b;
-    --ch-prime: #8898FF;         
+    --ch-prime: #8898FF;         /* 페리윙클 — 배지/보조 주요 버튼 */
     --ch-info: #78DCE8;
     --ch-info-hi: #8fe3ee;
     --ch-warn: #FFD866;
     --ch-good: #A9DC76;
     --ch-danger: #E85D5D;
     --ch-danger-hi: #f07575;
-    --ch-ko: #8db4d8;            
+    --ch-ko: #8db4d8;            /* 한국어 번역 표시 */
     --ch-input-bg: rgba(0,0,0,0.3);
     --ch-inset: rgba(0,0,0,0.22);
     --ch-overlay: rgba(0,0,0,0.55);
     --ch-shadow: rgba(0,0,0,0.5);
 }
-
+/* 느와르에선 참결만 화이트 (기존 룩 유지) */
 .grain-modal {
     --ch-bg: #fafafa;
     --ch-bg-2: #ffffff;
@@ -51,7 +54,7 @@
     --ch-shadow: rgba(0,0,0,0.22);
 }
 
-
+/* 🩵 파우더 블루 — 실리 macRetro Powder Blue 맞춤 */
 body.charm-theme-powder .charm-modal,
 body.charm-theme-powder #charm-badge-popup,
 body.charm-theme-powder #charm-send-badge,
@@ -82,7 +85,7 @@ body.charm-theme-powder .v2-modal {
     --ch-shadow: rgba(60, 86, 128, 0.18);
 }
 
-
+/* 🌸 블로섬 — 화이트 + 핑크 (참결 화이트 룩을 전체로) */
 body.charm-theme-blossom .charm-modal,
 body.charm-theme-blossom #charm-badge-popup,
 body.charm-theme-blossom #charm-send-badge,
@@ -113,7 +116,7 @@ body.charm-theme-blossom .v2-modal {
     --ch-shadow: rgba(60, 40, 50, 0.16);
 }
 
-
+/* 🧈 믹스테이프 — 버터옐로우 + 블랙 (도서관 레트로) */
 body.charm-theme-butter .charm-modal,
 body.charm-theme-butter #charm-badge-popup,
 body.charm-theme-butter #charm-send-badge,
@@ -144,7 +147,7 @@ body.charm-theme-butter .v2-modal {
     --ch-shadow: rgba(60, 50, 0, 0.35);
 }
 
-
+/* 🎨 실리 연동 — SillyTavern SmartTheme 변수를 그대로 따라감 */
 body.charm-theme-st .charm-modal,
 body.charm-theme-st #charm-badge-popup,
 body.charm-theme-st #charm-send-badge,
@@ -175,7 +178,9 @@ body.charm-theme-st .v2-modal {
     --ch-shadow: var(--SmartThemeShadowColor, rgba(0,0,0,0.4));
 }
 
-
+/* ═══════════════════════════════════════════════════
+   CHARM — Memory UI
+   ═══════════════════════════════════════════════════ */
 
 .charm-modal {
     display: flex;
@@ -201,8 +206,8 @@ body.charm-theme-st .v2-modal {
 .charm-container {
     width: 440px;
     max-width: 100%;
-    max-height: calc(100vh - 40px); 
-    
+    max-height: calc(100vh - 40px); /* 구형 브라우저 폴백 */
+    /* dvh(동적 뷰포트) + 오버레이 상하 패딩(safe-area)을 정확히 차감 — iOS 다이나믹 아일랜드/홈 인디케이터에서 밑 잘림 방지 */
     max-height: calc(100dvh - max(20px, env(safe-area-inset-top, 20px)) - max(20px, env(safe-area-inset-bottom, 20px)));
     background: var(--ch-bg);
     border-radius: 20px;
@@ -218,7 +223,7 @@ body.charm-theme-st .v2-modal {
     margin: auto;
 }
 
-
+/* ─── Header ─── */
 .charm-header {
     padding: 20px 44px 0 20px;
     text-align: center;
@@ -257,7 +262,7 @@ body.charm-theme-st .v2-modal {
 }
 .charm-close-btn:hover { color: var(--ch-text); background: color-mix(in srgb, var(--ch-ink) 8%, transparent); }
 
-
+/* ─── Branch Tabs (외전IF) ─── */
 .charm-branch-tabs {
     display: flex;
     gap: 4px;
@@ -325,7 +330,7 @@ body.charm-theme-st .v2-modal {
 }
 .charm-branch-add:hover { color: var(--ch-text-3); border-color: color-mix(in srgb, var(--ch-ink) 20%, transparent); background: color-mix(in srgb, var(--ch-ink) 3%, transparent); }
 
-
+/* ─── Tabs ─── */
 .charm-tabs {
     display: flex;
     gap: 2px;
@@ -367,7 +372,7 @@ body.charm-theme-st .v2-modal {
     padding: 0 4px;
 }
 
-
+/* ─── Content ─── */
 .charm-content {
     flex: 1;
     overflow-y: auto;
@@ -377,7 +382,7 @@ body.charm-theme-st .v2-modal {
     -webkit-overflow-scrolling: touch;
 }
 
-
+/* ─── Tree Layout ─── */
 .charm-tree-section {
     margin-bottom: 4px;
     border-radius: 12px;
@@ -483,7 +488,7 @@ body.charm-theme-st .v2-modal {
 .charm-tree-item:hover .charm-tree-item-delete { opacity: 1; }
 .charm-tree-item-delete:hover { color: var(--ch-danger); background: color-mix(in srgb, var(--ch-danger) 10%, transparent); }
 
-
+/* ─── Timeline ─── */
 .charm-tl-year-header {
     font-size: 13px;
     font-weight: 800;
@@ -558,7 +563,7 @@ body.charm-theme-st .v2-modal {
     line-height: 1.5;
 }
 
-
+/* 📐 임베딩 부족 표시 — 눌러서 채우기 */
 .charm-embed-fill {
     color: var(--ch-warn, #F0A04B);
     cursor: pointer;
@@ -566,13 +571,13 @@ body.charm-theme-st .v2-modal {
 }
 .charm-embed-fill:hover { filter: brightness(1.25); }
 
-
+/* 🪄 마법봉 진행 인디케이터 (챗시폰 패턴) */
 #charm-wand-gen {
     position: absolute; inset: -2px;
     display: flex; align-items: center; justify-content: center;
     border-radius: 8px;
     background: var(--SmartThemeBlurTintColor, rgba(18, 18, 26, 0.92));
-    pointer-events: none;           
+    pointer-events: none;           /* 진행 중 클릭 통과 — 마법봉 기능 유지 */
     z-index: 5;
 }
 #charm-wand-gen .charm-wand-icon { font-size: 15px; line-height: 1; display: inline-block; }
@@ -584,7 +589,7 @@ body.charm-theme-st .v2-modal {
     white-space: nowrap; pointer-events: none;
 }
 
-
+/* 🎬 잔메모리 세부사실 모달 */
 .cd-parent {
     background: color-mix(in srgb, var(--ch-ink) 4%, transparent);
     border-left: 3px solid var(--ch-info);
@@ -616,7 +621,7 @@ body.charm-theme-st .v2-modal {
 }
 .cd-row-body { flex: 1; min-width: 0; }
 .cd-en { font-size: 12px; color: var(--ch-text-2); line-height: 1.55; }
-
+/* 본문에서만 뽑은 것 = 원문 근거가 약함 → 연하게 (라벨 없이 색으로만 구분) */
 .cd-row.cd-weak { background: color-mix(in srgb, var(--ch-info) 3%, transparent); border-color: color-mix(in srgb, var(--ch-ink) 8%, transparent); }
 .cd-row.cd-weak .cd-en { color: var(--ch-text-4); }
 .cd-row.cd-weak .cd-ko { opacity: 0.7; }
@@ -639,7 +644,7 @@ body.charm-theme-st .v2-modal {
     box-sizing: border-box;
 }
 
-
+/* 🎬 세부사실 칩 (타임라인) */
 .charm-tl-detail-chip {
     background: color-mix(in srgb, var(--ch-info) 12%, transparent);
     border: 1px solid color-mix(in srgb, var(--ch-info) 30%, transparent);
@@ -688,7 +693,7 @@ body.charm-theme-st .v2-modal {
     box-sizing: border-box;
 }
 
-
+/* ─── Tags ─── */
 .charm-tag {
     display: inline-block;
     font-size: 9px;
@@ -705,7 +710,7 @@ body.charm-theme-st .v2-modal {
 .charm-tag-promise.broken { background: var(--ch-accent); color: #fff; }
 .charm-tag-promise.pending { background: #F0A04B; color: #1a1a2e; }
 
-
+/* ─── Tree item quote ─── */
 .charm-tree-item-body { flex: 1; min-width: 0; }
 .charm-tree-item-tags { margin-bottom: 2px; min-height: 0; }
 .charm-tree-item-tags:empty { display: none; }
@@ -719,7 +724,7 @@ body.charm-theme-st .v2-modal {
     line-height: 1.5;
 }
 
-
+/* ─── Korean Translation (보기 전용) ─── */
 .charm-tree-item-text-ko {
     font-size: 12px;
     line-height: 1.6;
@@ -768,7 +773,7 @@ body.charm-theme-st .v2-modal {
     opacity: 0.85;
 }
 
-
+/* ─── Empty State ─── */
 .charm-empty {
     text-align: center;
     padding: 40px 20px;
@@ -777,7 +782,7 @@ body.charm-theme-st .v2-modal {
 .charm-empty-icon { font-size: 32px; margin-bottom: 10px; }
 .charm-empty-text { font-size: 13px; line-height: 1.6; }
 
-
+/* ─── Footer Actions ─── */
 .charm-footer {
     padding: 10px 12px;
     border-top: 1px solid color-mix(in srgb, var(--ch-ink) 6%, transparent);
@@ -812,7 +817,7 @@ body.charm-theme-st .v2-modal {
 .charm-btn-danger { color: var(--ch-danger); flex: 0 0 auto; padding: 7px 10px; }
 .charm-btn-danger:hover { background: color-mix(in srgb, var(--ch-danger) 10%, transparent); }
 
-
+/* ─── Export Picker (카테고리 선택) ─── */
 .charm-export-picker {
     position: absolute;
     bottom: 60px;
@@ -896,7 +901,7 @@ body.charm-theme-st .v2-modal {
     flex: 1;
 }
 
-
+/* ─── Loading ─── */
 .charm-loading {
     text-align: center;
     padding: 30px;
@@ -905,7 +910,7 @@ body.charm-theme-st .v2-modal {
 }
 .charm-loading-dots { animation: charm-pulse 1.2s infinite; }
 
-
+/* ─── Send Badge ─── */
 #charm-send-badge {
     display: inline-flex;
     align-items: center;
@@ -943,7 +948,7 @@ body.charm-theme-st .v2-modal {
 .charm-badge-icon { font-size: 10px; }
 .charm-badge-num { font-size: 11px; font-weight: 800; }
 
-
+/* ─── Badge Popup ─── */
 #charm-badge-popup {
     display: none;
     position: fixed;
@@ -1043,11 +1048,11 @@ body.charm-theme-st .v2-modal {
     text-align: center;
 }
 
-
+/* ─── Settings panel in ST sidebar ─── */
 .charm-settings .inline-drawer-content { padding: 8px 12px; }
 .charm-settings .menu_button { font-size: 13px; padding: 6px 10px; }
 
-
+/* ─── Pin button ─── */
 .charm-pin-btn {
     background: none;
     border: none;
@@ -1059,7 +1064,7 @@ body.charm-theme-st .v2-modal {
 }
 .charm-pin-btn:hover, .charm-pin-btn.pinned { opacity: 1; }
 
-
+/* ─── Edit button ─── */
 .charm-edit-btn {
     background: none;
     border: none;
@@ -1073,7 +1078,7 @@ body.charm-theme-st .v2-modal {
 .charm-tree-item:hover .charm-edit-btn,
 .charm-tl-item:hover .charm-tl-edit { opacity: 1; }
 
-
+/* ─── Edit Panel (전용 영역 — 아이템 아래에 펼쳐짐) ─── */
 .charm-edit-panel {
     width: 100%;
     margin-top: 8px;
@@ -1180,7 +1185,7 @@ body.charm-theme-st .v2-modal {
 }
 .charm-edit-cancel:hover { background: color-mix(in srgb, var(--ch-ink) 10%, transparent); color: var(--ch-text); }
 
-
+/* ─── Robot Prompt ─── */
 .charm-robot-prompt {
     margin-top: 10px;
     padding: 10px 12px;
@@ -1237,7 +1242,7 @@ body.charm-theme-st .v2-modal {
     padding: 4px 0;
 }
 
-
+/* ─── Reconcile Compare ─── */
 .charm-reconcile-compare {
     margin-top: 10px;
     padding: 10px;
@@ -1308,7 +1313,7 @@ body.charm-theme-st .v2-modal {
 }
 .charm-reconcile-use-rev:hover { background: var(--ch-accent-hi); }
 
-
+/* ─── 직전 요약 일괄 AI수정 바 ─── */
 .charm-batch-edit-bar {
     margin: 0 0 8px;
 }
@@ -1393,7 +1398,7 @@ body.charm-theme-st .v2-modal {
     background: color-mix(in srgb, var(--ch-ink) 8%, transparent); color: var(--ch-text-3);
 }
 
-
+/* ─── 직전 요약 수집분 리스트 (버튼 클릭 시 노출) ─── */
 .charm-batch-list {
     max-height: 180px;
     overflow-y: auto;
@@ -1425,13 +1430,13 @@ body.charm-theme-st .v2-modal {
     padding: 8px 0;
 }
 
-
+/* ─── 코어 탭 NEW 섹션 ─── */
 .charm-new-section {
     border-color: color-mix(in srgb, var(--ch-warn) 35%, transparent) !important;
     background: color-mix(in srgb, var(--ch-warn) 5%, transparent) !important;
 }
 
-
+/* ─── Search Input ─── */
 .charm-search-wrap {
     position: relative;
     display: flex;
@@ -1485,7 +1490,7 @@ body.charm-theme-st .v2-modal {
 }
 .charm-search-clear:hover { background: color-mix(in srgb, var(--ch-accent) 20%, transparent); color: var(--ch-accent); }
 
-
+/* ─── Semantic Search 📐 ─── */
 .charm-search-wrap {
     padding-right: 28px;
 }
@@ -1534,7 +1539,7 @@ body.charm-theme-st .v2-modal {
 
 .charm-hidden { display: none !important; }
 
-
+/* ─── Timeline edit specific ─── */
 .charm-tl-meta {
     display: flex;
     align-items: center;
@@ -1571,7 +1576,10 @@ body.charm-theme-st .v2-modal {
 }
 .charm-tl-date-input:focus { outline: none; border-color: var(--ch-accent); }
 
-
+/* ═══════════════════════════════════════════════════════
+   참결 (GRAIN) — 케이스 파일 아카이브 (프로파일링 도시에)
+   폴더 탭 + 모노 캡스 라벨 + 클립/테이프 종이 카드
+   ═══════════════════════════════════════════════════════ */
 
 .grain-modal {
     display: none;
@@ -1582,7 +1590,7 @@ body.charm-theme-st .v2-modal {
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
-    
+    /* vv핀이 오버레이 크기를 잡음 — 쉘은 오버레이(100%) 기준. 100dvh 금지(위 잘림) */
     padding: 16px 8px;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -1623,7 +1631,7 @@ body.charm-theme-st .v2-modal {
 }
 .gw-close:hover { color: var(--ch-bg); background: color-mix(in srgb, var(--ch-bg) 14%, transparent); }
 
-
+/* ── 다크 밴드 헤더 — 아카이브 표지 ── */
 .gw-head { flex-shrink: 0; }
 .gw-band {
     display: flex;
@@ -1660,7 +1668,7 @@ body.charm-theme-st .v2-modal {
     min-width: 0;
 }
 
-
+/* ── 본문 ── */
 .gw-body {
     flex: 1;
     min-height: 0;
@@ -1671,7 +1679,7 @@ body.charm-theme-st .v2-modal {
     scrollbar-color: color-mix(in srgb, var(--ch-ink) 14%, transparent) transparent;
 }
 
-
+/* ── 히어로 — 클립 꽂힌 "세계의 공기" 메모 ── */
 .gw-hero {
     position: relative;
     margin: 6px 4px 16px;
@@ -1724,7 +1732,7 @@ body.charm-theme-st .v2-modal {
 .gw-hero:hover .gw-hero-edit { opacity: 1; }
 .gw-hero-wrap { margin: 6px 4px 16px; }
 
-
+/* ── SYNC — 바코드 스티커 버튼 ── */
 .gw-sync {
     display: flex;
     align-items: center;
@@ -1752,7 +1760,7 @@ body.charm-theme-st .v2-modal {
     align-items: stretch;
     margin: 0 4px 18px;
 }
-
+/* 행 안에선 SYNC가 남는 폭을 먹고, 삭제는 내용만큼만 */
 .gw-actions .gw-sync {
     flex: 1 1 auto;
     width: auto;
@@ -1793,7 +1801,7 @@ body.charm-theme-st .v2-modal {
 }
 .gw-sync:disabled { opacity: 0.55; cursor: wait; transform: none; }
 
-
+/* ── 폴더 스택 ── */
 .gw-stack { display: flex; flex-direction: column; }
 .gw-folder {
     --sec: var(--ch-accent);
@@ -1818,7 +1826,7 @@ body.charm-theme-st .v2-modal {
     font-weight: 800;
     letter-spacing: -0.2px;
 }
-
+/* 홀짝 폴더 탭 좌우 교차 — 파일 캐비닛 느낌 */
 .gw-folder:nth-child(even) .gw-tab { align-self: flex-end; }
 .gw-tab-count {
     font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
@@ -1875,7 +1883,7 @@ body.charm-theme-st .v2-modal {
     background: color-mix(in srgb, var(--ch-bg-2) 55%, transparent);
 }
 
-
+/* ── 종이 단서 카드 ── */
 .gw-notes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -1899,7 +1907,7 @@ body.charm-theme-st .v2-modal {
     transform: rotate(0deg) translateY(-2px);
     box-shadow: 0 6px 16px color-mix(in srgb, var(--sec) 20%, transparent);
 }
-
+/* 홀수 카드엔 클립, 짝수 카드엔 마스킹테이프 */
 .gw-note::before {
     content: '📎';
     position: absolute;
@@ -1973,7 +1981,7 @@ body.charm-theme-st .v2-modal {
     padding: 3px 8px;
 }
 
-
+/* ── 편집 폼 (종이 카드 펼침) ── */
 .gw-note.gw-editing {
     transform: none;
     padding: 13px;
@@ -2038,9 +2046,11 @@ body.charm-theme-st .v2-modal {
 }
 .gw-btn-del:hover { background: color-mix(in srgb, var(--ch-danger) 22%, transparent); }
 
+/* ═══════════════════════════════════════════════════════
+   참결 dev — 삶 보드 (존재 카드: 소개 + 요즘)
+   ═══════════════════════════════════════════════════════ */
 
-
-
+/* 리본 — 손으로 붙인 견출지 느낌의 그룹 라벨 */
 .gwl-ribbon {
     display: flex;
     align-items: center;
@@ -2063,10 +2073,10 @@ body.charm-theme-st .v2-modal {
 .gwl-ribbon .gw-tab-count { margin-left: 0; }
 .gwl-ribbon .gw-add { margin-left: auto; }
 
-
+/* 그룹 */
 .gwl-group { margin: 18px 2px 0; }
 
-
+/* 🫀 요즘의 {이름} — 클립 메모 */
 .gwl-self, .gwl-self-wrap { margin: 6px 4px 4px; }
 .gwl-self {
     position: relative;
@@ -2094,7 +2104,7 @@ body.charm-theme-st .v2-modal {
 .gwl-self .gw-hero-edit { opacity: 0.45; }
 .gwl-self:hover .gw-hero-edit { opacity: 1; }
 
-
+/* 존재 카드 그리드 */
 .gwl-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -2106,7 +2116,7 @@ body.charm-theme-st .v2-modal {
     .gwl-cards-things { grid-template-columns: 1fr 1fr; }
 }
 
-
+/* 사람/장소 카드 공통 텍스트 */
 .gwl-p-name {
     font-size: 13px;
     font-weight: 800;
@@ -2130,7 +2140,7 @@ body.charm-theme-st .v2-modal {
     word-break: break-word;
 }
 
-
+/* 온도 게이지 — ⇄캐릭터 / ⇄유저 */
 .gwl-gauges {
     display: flex;
     flex-direction: column;
@@ -2193,7 +2203,7 @@ body.charm-theme-st .v2-modal {
 .gwl-gauge.warm .gwl-gauge-val { color: var(--ch-accent); }
 .gwl-gauge.cold .gwl-gauge-val { color: var(--ch-info); }
 
-
+/* 💍 소중한 것 — 작은 태그 카드 */
 .gwl-thing { padding: 10px 26px 10px 12px; }
 .gwl-thing-name {
     font-size: 12.5px;
@@ -2207,7 +2217,7 @@ body.charm-theme-st .v2-modal {
     word-break: break-word;
 }
 
-
+/* 📜 세계 법칙 — 조약문 줄 */
 .gwl-canon {
     display: flex;
     flex-direction: column;
@@ -2232,7 +2242,7 @@ body.charm-theme-st .v2-modal {
 .gwl-canon-line .gw-note-edit { top: 5px; }
 .gwl-canon-line:hover .gw-note-edit { opacity: 0.9; }
 
-
+/* 편집 폼 보강 */
 .gwl-editing .gwl-in-ko, .gwl-editing .gwl-in-en,
 .gwl-editing .gwl-in-text-ko, .gwl-editing .gwl-in-text-en,
 .gwl-editing .gwl-in-note { margin-bottom: 6px; }
@@ -2274,7 +2284,7 @@ body.charm-theme-st .v2-modal {
     cursor: pointer;
 }
 
-
+/* 키워드 자동 등록 바 */
 .gwl-seek {
     display: flex;
     gap: 6px;
@@ -2308,7 +2318,9 @@ body.charm-theme-st .v2-modal {
     .gwl-seek-in { flex-basis: 100%; }
 }
 
-
+/* ═══════════════════════════════════════════════════════
+   기억(CHARM) 모달 폴리시 — 카드화 + 액센트
+   ═══════════════════════════════════════════════════════ */
 
 .charm-container { border: 1px solid color-mix(in srgb, var(--ch-ink) 7%, transparent); }
 .charm-tab { border-radius: 11px; }
@@ -2357,7 +2369,7 @@ body.charm-theme-st .v2-modal {
 .charm-btn { border-radius: 10px; padding: 8px 6px; }
 .charm-btn-primary { background: color-mix(in srgb, var(--ch-prime) 16%, transparent); }
 
-
+/* 도구 탭 — 항목 카드화 */
 .charm-tools .charm-dev-sec,
 #charm-dev-modal .charm-dev-sec {
     background: color-mix(in srgb, var(--ch-bg-2) 75%, transparent);
@@ -2372,7 +2384,7 @@ body.charm-theme-st .v2-modal {
 .charm-tools .charm-dev-sec[open],
 #charm-dev-modal .charm-dev-sec[open] { padding-bottom: 12px; }
 
-
+/* ── 배지 팝업 달력 버튼 (dev) ── */
 .charm-popup-cal-btn {
     background: none;
     border: 1px solid color-mix(in srgb, var(--ch-warn) 45%, transparent);
@@ -2391,12 +2403,12 @@ body.charm-theme-st .v2-modal {
 }
 .charm-popup-cal-btn:hover { background: color-mix(in srgb, var(--ch-warn) 20%, transparent); }
 
-
+/* ── 날짜별 요약 모달 (dev) ── */
 .charm-date-container {
     width: 400px;
     padding: 26px 24px 24px;
 }
-
+/* dev 모달: 섹션 다 펼치면 길어짐 → 헤더/닫기는 고정, 섹션만 내부 스크롤 (컨테이너 자체는 overflow:hidden 유지) */
 #charm-dev-modal .charm-date-head { flex-shrink: 0; }
 .charm-dev-body {
     flex: 1;
@@ -2499,7 +2511,9 @@ body.charm-theme-st .v2-modal {
 }
 
 
-
+/* ST .menu_button 은 width:min-content 라 두 단어 한글 라벨이 세로로 뭉갬(선/택/항/목).
+   + ST 테마 hover 가 CHARM 다크 모달 위에선 검정으로 뭉개져 글자가 안 보임
+   → dev 모달·도구 탭의 menu_button 을 charm-btn 톤으로 통일 */
 #charm-dev-modal .menu_button,
 .charm-tools .menu_button {
     width: auto;
@@ -2523,7 +2537,12 @@ body.charm-theme-st .v2-modal {
     cursor: default;
 }
 
-
+/* ═══════════════════════════════════════════════════════
+   🪟 마음의 창 (MIND) — dev 전용
+   파스텔 레트로 OS 스티커: 창마다 아예 다른 종류의 창
+   (말풍선/뷰어/플레이어/진행바/다이얼로그/주소창/비디오/슬라이더)
+   테마 변수 기반 · 배경 무늬 없음(플랫)
+   ═══════════════════════════════════════════════════════ */
 
 .mw-modal {
     display: none;
@@ -2534,14 +2553,14 @@ body.charm-theme-st .v2-modal {
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
-    
+    /* vv핀이 오버레이 크기를 잡음 — 쉘은 오버레이(100%) 기준. 100dvh 금지(위 잘림) */
     padding: 16px 8px;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .mw-shell {
-    
+    /* 스티커 외곽선 — 모든 창이 공유하는 라인 */
     --mw-line: color-mix(in srgb, var(--ch-ink) 42%, var(--ch-bg-2));
     position: relative;
     width: min(94%, 860px);
@@ -2555,7 +2574,7 @@ body.charm-theme-st .v2-modal {
     box-shadow: 0 20px 60px var(--ch-shadow);
     overflow: hidden;
 }
-
+/* 물결(스캘럽) 밑단 */
 .mw-shell::after {
     content: '';
     position: absolute;
@@ -2575,7 +2594,7 @@ body.charm-theme-st .v2-modal {
     .mw-shell { width: 100%; height: 100%; max-height: 100%; border-radius: 0; border-left: none; border-right: none; }
 }
 
-
+/* ── 메인 타이틀바 ── */
 .mw-header { flex-shrink: 0; }
 .mw-titlebar-main {
     display: flex;
@@ -2649,7 +2668,7 @@ body.charm-theme-st .v2-modal {
     .mw-sub { padding: 8px 11px; }
 }
 
-
+/* ── 창 공통 뼈대 ── */
 .mw-win {
     background: var(--ch-bg-2);
     border: 1.5px solid var(--mw-line);
@@ -2670,7 +2689,7 @@ body.charm-theme-st .v2-modal {
 }
 .mw-ticon { font-size: 12.5px; }
 .mw-tname { flex: 1; font-size: 12px; font-weight: 800; letter-spacing: -0.2px; }
-
+/* 창 버튼 ▭▣✕ */
 .mw-wbtns { display: flex; align-items: center; gap: 4px; }
 .mw-wbtns i {
     width: 9px; height: 9px;
@@ -2704,7 +2723,7 @@ body.charm-theme-st .v2-modal {
     color: var(--ch-text-4); text-align: right;
 }
 
-
+/* ── 🫧 말풍선 (속마음) ── */
 .mw-skin-bubble { background: transparent; border: none; overflow: visible; }
 .mw-skin-bubble:hover { box-shadow: none; }
 .mw-chip {
@@ -2735,7 +2754,7 @@ body.charm-theme-st .v2-modal {
     border-bottom-right-radius: 3px;
 }
 
-
+/* ── 💗 이미지 뷰어 (나를 어떻게 보나) ── */
 .mw-frame {
     border: 1.5px solid var(--mw-line);
     border-radius: 4px;
@@ -2747,7 +2766,7 @@ body.charm-theme-st .v2-modal {
 .mw-vfoot .mw-at { margin-top: 0; }
 .mw-vicons { font-size: 11px; letter-spacing: 2px; color: color-mix(in srgb, var(--mw, var(--ch-accent)) 78%, var(--ch-text)); }
 
-
+/* ── 🎛 플레이어 (참는 것⏸ / 후회◁◁ / 집착🔁) ── */
 .mw-transport {
     display: flex; align-items: center; justify-content: center; gap: 12px;
     margin-top: 10px; padding: 6px 0 2px;
@@ -2781,7 +2800,7 @@ body.charm-theme-st .v2-modal {
 .mw-track-thick { height: 11px; }
 .mw-track-thick i { width: 16px; height: 16px; background: color-mix(in srgb, var(--ch-warn) 45%, var(--ch-bg-2)); }
 
-
+/* ── 🗝️ 다이얼로그 (비밀/거짓말/사라진다면) — 회색 시스템 창 ── */
 .mw-skin-dialog { background: color-mix(in srgb, var(--ch-ink) 6%, var(--ch-bg-2)); }
 .mw-dlgbar {
     display: flex; align-items: center; gap: 7px;
@@ -2803,7 +2822,7 @@ body.charm-theme-st .v2-modal {
     box-shadow: 0 2px 0 -0.5px var(--mw-line);
 }
 
-
+/* ── 🌗 브라우저 (처음과 지금) ── */
 .mw-urlbar {
     margin: 8px 10px 0;
     padding: 5px 12px;
@@ -2816,7 +2835,7 @@ body.charm-theme-st .v2-modal {
     text-align: center;
 }
 
-
+/* ── 💤 비디오 (꿈) ── */
 .mw-screen {
     position: relative;
     margin: 10px 10px 0;
@@ -2840,7 +2859,7 @@ body.charm-theme-st .v2-modal {
 .mw-skin-video .mw-track { margin: 8px 10px 0; }
 .mw-video-foot { padding-top: 4px; }
 
-
+/* ── 🕯️ 슬라이더 바 (마지막 말) — 전폭 ── */
 .mw-skin-slider { grid-column: 1 / -1; border-radius: 999px; }
 .mw-sliderwrap { padding: 10px 20px 12px; }
 .mw-chip-inline {
@@ -2854,7 +2873,7 @@ body.charm-theme-st .v2-modal {
     padding: 2px 8px 4px;
 }
 
-
+/* ── 📜 유언장 / 💌 편지 — 전폭 문서 ── */
 .mw-win[data-key="will"], .mw-win[data-key="letter"] { grid-column: 1 / -1; }
 .mw-win[data-key="will"] .mw-win-body {
     background: color-mix(in srgb, var(--ch-warn) 8%, var(--ch-bg-2));
@@ -2870,7 +2889,7 @@ body.charm-theme-st .v2-modal {
         color-mix(in srgb, var(--mw, var(--ch-accent)) 28%, transparent) 27px 28px);
 }
 
-
+/* ── 히스토리 — 창을 누르면 이전 답 전부 ── */
 .mw-win .mw-hist { display: none; }
 .mw-win.open .mw-hist {
     display: block;
@@ -2893,7 +2912,7 @@ body.charm-theme-st .v2-modal {
     color: var(--ch-text-4); margin-bottom: 3px;
 }
 
-
+/* ── 문항 전용 모달 (카드 클릭 → 위에 한 겹) ── */
 .mw-detail {
     z-index: 10002;
     padding: 20px 12px;
@@ -2906,7 +2925,7 @@ body.charm-theme-st .v2-modal {
     border-radius: 16px;
     border: 2px solid var(--mw-line);
 }
-.mw-detail .mw-shell::after { content: none; }  
+.mw-detail .mw-shell::after { content: none; }  /* 물결 밑단 생략 */
 .mwd-titlebar {
     background: color-mix(in srgb, var(--mw, var(--ch-prime)) 24%, var(--ch-bg-2));
     padding: 8px 12px;
@@ -2931,7 +2950,7 @@ body.charm-theme-st .v2-modal {
     .mw-detail .mw-shell { width: 96%; border-radius: 16px; border-left: 2px solid var(--mw-line); border-right: 2px solid var(--mw-line); }
 }
 
-
+/* ── 🫦 참고 있는 것 — 전송 못 한 메시지 입력창 ── */
 .mw-unsent {
     display: flex;
     align-items: center;
@@ -2970,10 +2989,10 @@ body.charm-theme-st .v2-modal {
     border: 1.5px solid var(--mw-line);
     border-radius: 999px;
     padding: 4px 13px;
-    opacity: 0.6;   
+    opacity: 0.6;   /* 끝내 눌리지 않는 버튼 */
 }
 
-
+/* ── 🃏 다음 수 — 다음 트랙 예약 ── */
 .mw-upnext {
     display: flex;
     align-items: center;
@@ -3004,7 +3023,7 @@ body.charm-theme-st .v2-modal {
     color: var(--ch-text-3);
 }
 
-
+/* ── 🗝️ 비밀 — 비밀번호 필드 ── */
 .mw-pw {
     margin-top: 10px;
     text-align: center;
@@ -3018,7 +3037,7 @@ body.charm-theme-st .v2-modal {
     user-select: none;
 }
 
-
+/* ── 🪦 사라진다면 — 삭제 확인의 [아니오] ── */
 .mw-dlg-btns { gap: 8px; }
 .mw-dlg-strong {
     background: color-mix(in srgb, var(--mw, var(--ch-accent)) 22%, var(--ch-bg-2));
@@ -3026,7 +3045,7 @@ body.charm-theme-st .v2-modal {
     border-color: color-mix(in srgb, var(--mw, var(--ch-accent)) 55%, var(--mw-line));
 }
 
-
+/* ── 🥀 후회 — 실행 취소 불가 ── */
 .mw-undo {
     display: flex;
     align-items: center;
@@ -3044,7 +3063,7 @@ body.charm-theme-st .v2-modal {
     border: 1.5px solid var(--mw-line);
     border-radius: 8px;
     padding: 4px 12px;
-    opacity: 0.55;          
+    opacity: 0.55;          /* 회색으로 죽어 있는 버튼 */
     text-decoration: line-through;
     text-decoration-thickness: 1px;
     user-select: none;
@@ -3056,7 +3075,7 @@ body.charm-theme-st .v2-modal {
     letter-spacing: 0.5px;
 }
 
-
+/* ── 🕯️ 마지막 말 — 테이프의 끝 ── */
 .mw-eot {
     margin-top: 6px;
     text-align: center;
@@ -3067,14 +3086,14 @@ body.charm-theme-st .v2-modal {
     color: var(--ch-text-4);
 }
 
-
+/* ── 초기화 버튼 ── */
 .mw-sub-btns { display: flex; gap: 6px; flex-shrink: 0; }
 .mw-reset {
     background: color-mix(in srgb, var(--ch-danger) 12%, var(--ch-bg-2));
     color: var(--ch-danger);
 }
 .mw-reset:hover { background: color-mix(in srgb, var(--ch-danger) 24%, var(--ch-bg-2)); }
-
+/* ═══════════ 🖥️ CHARM V2 — 통합 모달 (dev) ═══════════ */
 .v2-modal {
     position: fixed;
     inset: 0;
@@ -3087,7 +3106,7 @@ body.charm-theme-st .v2-modal {
 }
 .v2-shell {
     position: relative;
-    width: min(94%, 780px);          
+    width: min(94%, 780px);          /* 참결(gw-shell)과 동일 폭 */
     height: min(96%, 820px);
     display: flex;
     flex-direction: column;
@@ -3102,7 +3121,7 @@ body.charm-theme-st .v2-modal {
     .v2-shell { width: 100%; height: 100%; max-height: 100%; border-radius: 0; }
 }
 
-
+/* 타이틀바 — macOS 창 */
 .v2-titlebar {
     flex: none;
     display: flex;
@@ -3132,7 +3151,7 @@ body.charm-theme-st .v2-modal {
 }
 .v2-x:hover { opacity: 1; }
 
-
+/* 탭 */
 .v2-tabs {
     flex: none;
     display: flex;
@@ -3161,12 +3180,12 @@ body.charm-theme-st .v2-modal {
     color: var(--ch-accent);
 }
 
-
+/* 패널 */
 .v2-panels { flex: 1; display: flex; min-height: 0; }
 .v2-panel { display: none; flex: 1; min-width: 0; flex-direction: column; overflow-y: auto; }
 .v2-panel.active { display: flex; }
 
-
+/* V1 셸 이식 보정 */
 .v2-shell .charm-container {
     width: 100%; height: 100%;
     max-width: none; max-height: none;
@@ -3177,7 +3196,7 @@ body.charm-theme-st .v2-modal {
 #v2-panel-grain .gw-head { flex: none; }
 #v2-panel-grain .gw-body { flex: 1; }
 
-
+/* ── 🏠 홈: 파인더 룩 ── */
 .v2-finder { display: flex; flex: 1; min-height: 0; }
 .v2-side {
     flex: none;
@@ -3229,7 +3248,7 @@ body.charm-theme-st .v2-modal {
     position: relative;
 }
 
-
+/* 폴더 그리드 */
 .v2-folders { display: flex; flex-wrap: wrap; gap: 18px 22px; }
 .v2-folder { cursor: pointer; text-align: center; width: 84px; user-select: none; }
 .v2-folder-icon i {
@@ -3253,7 +3272,7 @@ body.charm-theme-st .v2-modal {
 .v2-folder:hover .v2-folder-icon i { transform: translateY(-2px); }
 .v2-folder-name { font-size: 11.5px; margin-top: 7px; opacity: 0.85; }
 
-
+/* 타이포 히어로 */
 .v2-hero {
     text-align: center;
     margin: auto 0 8px;
@@ -3266,7 +3285,7 @@ body.charm-theme-st .v2-modal {
 .v2-hero-l1, .v2-hero-l2 { font-size: clamp(34px, 7.5vw, 58px); color: var(--ch-text); }
 .v2-hero-l2 em { font-style: italic; color: var(--ch-accent); }
 
-
+/* 스티커 */
 .v2-sticker {
     align-self: flex-end;
     margin: 14px 8px 0 0;
@@ -3289,7 +3308,7 @@ body.charm-theme-st .v2-modal {
 .v2-sticker-sub { font-size: 10.5px; opacity: 0.6; margin-top: 5px; }
 .v2-sticker:hover .v2-sticker-card { background: color-mix(in srgb, var(--ch-accent) 32%, var(--ch-bg)); }
 
-
+/* 검색바 */
 .v2-searchwrap {
     margin: 22px auto 6px;
     display: flex;
@@ -3328,6 +3347,7 @@ body.charm-theme-st .v2-modal {
     .v2-hero { letter-spacing: -1px; }
 }
 
+/* ── V2 기억 탭: 세그먼트 + 카드 브라우저 ── */
 .v2-seg {
     flex: none;
     display: flex;
@@ -3489,6 +3509,7 @@ body.charm-theme-st .v2-modal {
     .v2-mem-grid { grid-template-columns: 1fr; }
 }
 
+/* ── V2 타임라인: 세로 날짜 레일 + 소프트 카드 ── */
 .v2-tl-rail {
     flex: none;
     width: 58px;
@@ -3606,6 +3627,7 @@ body.charm-theme-st .v2-modal {
 .v2-tl-result-ko { font-size: 11.5px; color: var(--ch-ko, #8db4d8); margin: 4px 0 6px 4px; }
 .v2-tl-details { font-size: 11.5px; color: var(--ch-text-3); margin: 6px 0; line-height: 1.6; }
 
+/* 인라인 에디터 (기억·타임라인 공용) */
 .v2-edit { display: flex; flex-direction: column; gap: 8px; }
 .v2-edit-name, .v2-edit-text, .v2-edit-result {
     width: 100%;
