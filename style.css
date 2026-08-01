@@ -1313,6 +1313,77 @@ body.charm-theme-st .v2-modal {
 }
 .charm-reconcile-use-rev:hover { background: var(--ch-accent-hi); }
 
+/* ─── 일괄 편집 바 (dev) ─── */
+.charm-bulk-bar {
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    background: var(--ch-bg);
+    padding: 6px 0 8px;
+    margin: 0 0 6px;
+}
+.charm-bulk-bar.open {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-bottom: 1px solid color-mix(in srgb, var(--ch-ink) 8%, transparent);
+}
+.charm-bulk-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.charm-bulk-bar button {
+    border: 1px solid color-mix(in srgb, var(--ch-ink) 12%, transparent);
+    background: color-mix(in srgb, var(--ch-ink) 5%, transparent);
+    color: var(--ch-text-3);
+    border-radius: 8px;
+    padding: 5px 9px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+}
+.charm-bulk-bar button:hover { background: color-mix(in srgb, var(--ch-ink) 11%, transparent); }
+.charm-bulk-toggle { width: 100%; }
+.charm-bulk-bar.open .charm-bulk-toggle {
+    width: auto;
+    border-color: color-mix(in srgb, var(--ch-accent) 45%, transparent);
+    background: color-mix(in srgb, var(--ch-accent) 10%, transparent);
+    color: var(--ch-accent);
+}
+.charm-bulk-count { font-size: 11px; color: var(--ch-text-4); margin-left: auto; }
+.charm-bulk-count b { color: var(--ch-text-2); }
+.charm-bulk-label { font-size: 11px; color: var(--ch-text-3); font-weight: 600; }
+.charm-bulk-range { flex: 1; min-width: 90px; accent-color: var(--ch-accent); }
+.charm-bulk-val {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ch-accent);
+    min-width: 16px;
+    text-align: center;
+}
+.charm-bulk-apply {
+    border-color: transparent !important;
+    background: var(--ch-accent) !important;
+    color: #fff !important;
+}
+.charm-bulk-apply:hover:not(:disabled) { background: var(--ch-accent-hi) !important; }
+.charm-bulk-apply:disabled { opacity: 0.4; cursor: default; }
+.charm-bulk-check, .charm-bulk-sec-check {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin: 3px 0 0;
+    accent-color: var(--ch-accent);
+    cursor: pointer;
+}
+.charm-tl-year-header .charm-bulk-sec-check,
+.charm-tl-month-header .charm-bulk-sec-check { margin: 0 6px 0 0; vertical-align: middle; }
+
 /* ─── 직전 요약 일괄 AI수정 바 ─── */
 .charm-batch-edit-bar {
     margin: 0 0 8px;
