@@ -3721,3 +3721,8 @@ body.charm-theme-st .v2-modal {
 .v2-edit-impval { color: var(--ch-accent); min-width: 18px; text-align: center; }
 .v2-edit-btns { justify-content: flex-end; }
 .v2-edit-btns .menu_button { width: auto; white-space: nowrap; font-size: 11px; margin: 0; }
+
+/* (dev) 🕰 지난 창 — 스냅샷 생성 입력줄 */
+.mw-snap-make { display: flex; gap: 6px; align-items: center; margin-top: 6px; }
+.mw-snap-make .cd-add { flex: 1; margin: 0; min-width: 0; }
+.mw-snap-make .mw-refresh { flex-shrink: 0; }
