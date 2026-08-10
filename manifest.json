@@ -3,7 +3,7 @@
     "loading_order": 20,
     "requires": [],
     "optional": [],
-    "js": "index.js?v=mind10",
+    "js": "index.js?v=branch1",
     "css": "style.css?v=mind9",
     "author": "chatsy",
     "version": "0.1.0",
