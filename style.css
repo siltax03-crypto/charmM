@@ -3890,3 +3890,47 @@ body.charm-theme-st .charm-now-pop {
 .charm-ask-drawer > summary::after { content: ' ▾'; opacity: 0.6; }
 .charm-ask-drawer[open] > summary::after { content: ' ▴'; }
 .charm-ask-drawer > div { padding: 0 8px 8px; }
+
+/* ============================================================
+   참메모리 설정 패널 탭 — src/style.css 끝에 덧붙임
+   디코브릿지 .dbridge_tabs 와 같은 규칙. 색을 따로 정하지 않고
+   ST 테마의 글자색(currentColor)을 그대로 따라간다.
+   (--ch-* 변수는 .charm-modal / .v2-modal 계열에만 정의돼 있어
+    설정 서랍 안에서는 잡히지 않는다.)
+   ============================================================ */
+.charm-settings .charm-set-tabs {
+    display: flex;
+    gap: 2px;
+    margin: 6px 0 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.charm-settings .charm-set-tabs::-webkit-scrollbar { display: none; }
+.charm-settings .charm-set-tab {
+    padding: 6px 12px;
+    margin: 0 0 -1px 0;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: nowrap;
+    cursor: pointer;
+    opacity: 0.65;
+    user-select: none;
+    width: auto;
+}
+.charm-settings .charm-set-tab:hover { opacity: 0.9; }
+.charm-settings .charm-set-tab.active {
+    opacity: 1;
+    font-weight: 700;
+    border-bottom-color: currentColor;
+}
+.charm-settings .charm-set-panel { display: none; }
+.charm-settings .charm-set-panel.active { display: block; }
+
+@media (max-width: 500px) {
+    .charm-settings .charm-set-tab { padding: 6px 8px; }
+}
