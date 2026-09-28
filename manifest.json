@@ -3,10 +3,10 @@
     "loading_order": 20,
     "requires": [],
     "optional": [],
-    "js": "index.js?v=g13",
-    "css": "style.css?v=now7",
+    "js": "index.js?v=g14",
+    "css": "style.css?v=rs1",
     "author": "chatsy",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "homePage": "",
     "auto_update": false
 }

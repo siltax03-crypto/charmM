@@ -3934,3 +3934,27 @@ body.charm-theme-st .charm-now-pop {
 @media (max-width: 500px) {
     .charm-settings .charm-set-tab { padding: 6px 8px; }
 }
+
+/* ═══ 🔁 인물 다시 수집 패널 (2026-09-28) ═══ */
+.gwl-rescan { font-size: 13px; }
+.gwl-rs-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.gwl-rs-sub { opacity: .75; font-size: 12px; margin-bottom: 8px; line-height: 1.5; }
+.gwl-rs-chip { display: inline-block; font-weight: 500; font-size: 11px; border: 1px solid color-mix(in srgb, var(--ch-ink, #888) 25%, transparent); border-radius: 99px; padding: 0 8px; margin: 0 2px 2px 0; }
+.gwl-rs-bar { height: 6px; border-radius: 99px; overflow: hidden; margin: 8px 0; background: color-mix(in srgb, var(--ch-ink, #888) 12%, transparent); }
+.gwl-rs-bar i { display: block; height: 100%; width: 35%; border-radius: 99px; background: var(--sec, var(--ch-accent, #3C5680)); animation: gwlRsSlide 1.2s ease-in-out infinite; }
+@keyframes gwlRsSlide { 0% { transform: translateX(-100%); } 100% { transform: translateX(290%); } }
+.gwl-rs-log div { font-size: 12px; margin: 2px 0; opacity: .85; }
+.gwl-rs-alias { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 12px; margin-bottom: 8px; }
+.gwl-rescan .gwl-rs-alias input { flex: 1 1 160px; width: auto; min-width: 120px; }
+.gwl-rs-note-shown { border-left: 3px solid #e0b400; padding: 5px 9px; margin: 6px 0 8px; font-size: 12px; border-radius: 0 6px 6px 0; background: color-mix(in srgb, #fff3b0 35%, transparent); }
+.gwl-rs-scroll { overflow-x: auto; }
+.gwl-rs-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.gwl-rs-table th, .gwl-rs-table td { text-align: left; vertical-align: top; padding: 6px 5px; border-top: 1px solid color-mix(in srgb, var(--ch-ink, #888) 15%, transparent); white-space: pre-wrap; }
+.gwl-rs-table th { font-size: 11px; opacity: .6; font-weight: 600; }
+.gwl-rs-table td.gwl-rs-f { white-space: nowrap; font-weight: 600; width: 1%; }
+.gwl-rs-table td.gwl-rs-old { opacity: .6; width: 40%; }
+.gwl-rs-table mark { background: #fff3b0; color: #2b2a27; border-bottom: 2px solid #e0b400; padding: 0 1px; }
+.gwl-rescan .gwl-rs-note { width: 100%; box-sizing: border-box; border-style: dashed; }
+@media (max-width: 520px) {
+    .gwl-rs-table td.gwl-rs-old { width: 35%; }
+}
